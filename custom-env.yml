@@ -1,0 +1,7 @@
+name: custom environment variable
+
+on : push
+
+env : 
+
+name : sri
