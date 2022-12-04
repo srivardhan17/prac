@@ -2,7 +2,9 @@ name: env_tutorial
 ## Triggers the workflow on when there is a push, or 
 ## pull request on the main branch
 on: [pull_request, push] 
-
+env:
+  ## Sets environment variable
+  API_KEY: ${{secrets.API_KEY}}
 jobs:
   job1:
     ## The type of runner that the job will run on
@@ -10,7 +12,8 @@ jobs:
     steps:
       - name: step 1
         ## Reference your environment variables
-        run: echo "The API key is:${{secrets.API_KEY}}"   
+      
+        run: echo "The API key is:$API_KEY"   
 
   job2:
     runs-on: ubuntu-latest
